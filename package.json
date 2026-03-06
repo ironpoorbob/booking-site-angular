@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:booking-demo": "ng build --base-href /booking-demo/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

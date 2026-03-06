@@ -1,0 +1,42 @@
+{
+  "artists": [
+    {
+      "name": "Stone Echo",
+      "genre": "Alt Rock",
+      "city": "Los Angeles",
+      "summary": "Available April weekends"
+    },
+    {
+      "name": "Midnight Static",
+      "genre": "Punk",
+      "city": "Long Beach",
+      "summary": "Touring support slots open"
+    },
+    {
+      "name": "Velvet Voltage",
+      "genre": "Indie Rock",
+      "city": "Orange County",
+      "summary": "45 minute set"
+    }
+  ],
+  "clubs": [
+    {
+      "name": "The Velvet Room",
+      "city": "Hollywood",
+      "capacity": 350,
+      "summary": "Books Friday and Saturday showcases"
+    },
+    {
+      "name": "Riot Alley",
+      "city": "Downtown LA",
+      "capacity": 220,
+      "summary": "Weekly live lineups"
+    },
+    {
+      "name": "Neon Club",
+      "city": "Long Beach",
+      "capacity": 500,
+      "summary": "Alternative and hard rock focused"
+    }
+  ]
+}

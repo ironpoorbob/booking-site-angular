@@ -1,0 +1,211 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  color: #f0f0f0;
+  font-family: var(--font-body);
+}
+
+.profile-edit-page {
+  min-height: 100vh;
+  padding: 1.4rem;
+  background:
+    radial-gradient(circle at 15% 5%, rgba(255, 138, 0, 0.1) 0%, transparent 35%),
+    radial-gradient(circle at 85% 20%, rgba(255, 61, 0, 0.1) 0%, transparent 32%),
+    #090909;
+}
+
+.profile-edit-card {
+  width: min(760px, 100%);
+  margin: 0 auto;
+  border: 1px solid #2f2f2f;
+  border-radius: 16px;
+  background: #121212;
+  padding: clamp(1.2rem, 3.2vw, 2rem);
+}
+
+.kicker {
+  margin: 0;
+  color: #ff8a00;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0.45rem 0 0;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: clamp(2rem, 4vw, 2.9rem);
+}
+
+.subtitle {
+  margin: 0.65rem 0 0;
+  color: #ababab;
+}
+
+.role-switch {
+  margin-top: 1.1rem;
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.role-button {
+  border: 1px solid #393939;
+  background: #1a1a1a;
+  color: #e5e5e5;
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.role-button.active {
+  background: linear-gradient(90deg, #ff3d00 0%, #ff8a00 100%);
+  color: #111;
+  border-color: transparent;
+}
+
+.profile-form {
+  margin-top: 1.1rem;
+}
+
+.profile-form section {
+  display: grid;
+  gap: 0.85rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+h3 {
+  margin: 0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #c9c9c9;
+}
+
+label {
+  display: grid;
+  gap: 0.4rem;
+  font-weight: 600;
+  color: #d9d9d9;
+}
+
+fieldset {
+  border: 1px solid #343434;
+  border-radius: 10px;
+  padding: 0.8rem;
+  margin: 0;
+}
+
+legend {
+  padding: 0 0.35rem;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #bdbdbd;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #343434;
+  border-radius: 10px;
+  background: #1b1b1b;
+  color: #f2f2f2;
+  padding: 0.7rem 0.8rem;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 7.5rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #ff6b2d;
+  border-color: #ff6b2d;
+}
+
+.field-help {
+  font-size: 0.82rem;
+  color: #9f9f9f;
+  font-weight: 500;
+}
+
+.media-links {
+  display: grid;
+  gap: 0.75rem;
+  padding-top: 0.2rem;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.45rem 0.8rem;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.checkbox-group input[type='checkbox'] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: #ff6b2d;
+  border-radius: 4px;
+}
+
+.actions {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.save-link,
+.cancel-link {
+  display: inline-flex;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.7rem 1.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.save-link {
+  background: linear-gradient(90deg, #ff3d00 0%, #ff8a00 100%);
+  color: #111;
+}
+
+.cancel-link {
+  background: #1c1c1c;
+  color: #f0f0f0;
+  border: 1px solid #3d3d3d;
+}
+
+@media (max-width: 640px) {
+  .save-link,
+  .cancel-link {
+    width: 100%;
+  }
+}

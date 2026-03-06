@@ -1,0 +1,136 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  color: #f1f1f1;
+  font-family: var(--font-body);
+}
+
+.dashboard-page {
+  min-height: 100vh;
+  padding: 1.4rem;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(255, 138, 0, 0.09) 0%, transparent 35%),
+    radial-gradient(circle at 85% 20%, rgba(255, 61, 0, 0.08) 0%, transparent 35%),
+    #090909;
+}
+
+.dashboard-wrap {
+  width: min(920px, 100%);
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.dashboard-header {
+  border: 1px solid #2e2e2e;
+  border-radius: 16px;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  background: #131313;
+}
+
+.kicker {
+  margin: 0;
+  color: #ff8a00;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+h1 {
+  margin: 0.45rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.home-link {
+  display: inline-block;
+  margin-top: 0.8rem;
+  color: #ffad5b;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.panel {
+  border: 1px solid #2e2e2e;
+  border-radius: 16px;
+  padding: clamp(1rem, 3vw, 1.35rem);
+  background: #121212;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.panel-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.search-link,
+.edit-profile-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid #3e3e3e;
+  background: #1b1b1b;
+  color: #ffb26a;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.42rem 0.8rem;
+}
+
+.search-link {
+  color: #111;
+  border-color: transparent;
+  background: linear-gradient(90deg, #ff3d00 0%, #ff8a00 100%);
+}
+
+.profile-grid {
+  margin: 0.9rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.9rem;
+}
+
+dt {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #989898;
+}
+
+dd {
+  margin: 0.35rem 0 0;
+  font-weight: 600;
+}
+
+ul {
+  margin: 0.8rem 0 0;
+  padding-left: 1.2rem;
+  color: #cccccc;
+  line-height: 1.5;
+}
+
+li + li {
+  margin-top: 0.5rem;
+}
