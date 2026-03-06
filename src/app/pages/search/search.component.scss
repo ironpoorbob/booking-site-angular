@@ -1,0 +1,132 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  color: #f1f1f1;
+  font-family: var(--font-body);
+}
+
+.search-page {
+  min-height: 100vh;
+  padding: 1.4rem;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(255, 138, 0, 0.09) 0%, transparent 35%),
+    radial-gradient(circle at 85% 20%, rgba(255, 61, 0, 0.08) 0%, transparent 35%),
+    #090909;
+}
+
+.search-wrap {
+  width: min(920px, 100%);
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.search-header,
+.panel {
+  border: 1px solid #2e2e2e;
+  border-radius: 16px;
+  padding: clamp(1rem, 3vw, 1.35rem);
+  background: #121212;
+}
+
+.kicker {
+  margin: 0;
+  color: #ff8a00;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+h1 {
+  margin: 0.45rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin: 0.6rem 0 0;
+  color: #b7b7b7;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: #ffad5b;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.role-switch {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.role-button {
+  border: 1px solid #3e3e3e;
+  background: #1b1b1b;
+  color: #f0f0f0;
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.role-button.active {
+  border-color: transparent;
+  background: linear-gradient(90deg, #ff3d00 0%, #ff8a00 100%);
+  color: #111;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.filter-grid {
+  margin-top: 0.85rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.85rem;
+}
+
+label {
+  display: grid;
+  gap: 0.4rem;
+  font-weight: 600;
+  color: #d7d7d7;
+}
+
+input {
+  width: 100%;
+  border: 1px solid #343434;
+  border-radius: 10px;
+  background: #1a1a1a;
+  color: #f5f5f5;
+  padding: 0.65rem 0.75rem;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: 2px solid #ff6b2d;
+  border-color: #ff6b2d;
+}
+
+ul {
+  margin: 0.8rem 0 0;
+  padding-left: 1.2rem;
+  color: #cccccc;
+  line-height: 1.5;
+}
+
+li + li {
+  margin-top: 0.5rem;
+}

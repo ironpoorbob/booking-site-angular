@@ -1,0 +1,54 @@
+<main class="signup-page">
+  <section class="signup-card">
+    <h1>Create Account</h1>
+    <p class="subtitle">Choose account type first, then finish your mock sign-up details.</p>
+
+    <form class="signup-form" novalidate (submit)="createAccount($event)">
+      <fieldset class="account-type-group">
+        <legend>Account Type</legend>
+        <label>
+          <input
+            type="radio"
+            name="accountType"
+            value="artist"
+            [checked]="selectedAccountType() === 'artist'"
+            (change)="setAccountType($event)"
+          />
+          Artist
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="accountType"
+            value="club"
+            [checked]="selectedAccountType() === 'club'"
+            (change)="setAccountType($event)"
+          />
+          Club/Booker
+        </label>
+      </fieldset>
+
+      <label>
+        Username
+        <input type="text" name="username" placeholder="stagehandle" />
+      </label>
+
+      <label>
+        Password
+        <input type="password" name="password" placeholder="••••••••" />
+      </label>
+
+      <label>
+        Real Name
+        <input type="text" name="realName" placeholder="Alex Stone" />
+      </label>
+
+      <label>
+        Email
+        <input type="email" name="email" placeholder="alex@bandmail.com" />
+      </label>
+
+      <button type="submit" class="submit-button" [disabled]="!selectedAccountType()">Submit</button>
+    </form>
+  </section>
+</main>

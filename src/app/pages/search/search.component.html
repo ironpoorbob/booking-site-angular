@@ -1,0 +1,101 @@
+<main class="search-page">
+  <section class="search-wrap">
+    <header class="search-header">
+      <p class="kicker">Search</p>
+      <h1>Advanced Search</h1>
+      <p class="subtitle">Find artists or clubs/bookers using role-specific filters.</p>
+      <a class="back-link" routerLink="/dashboard">Back to Dashboard</a>
+    </header>
+
+    @if (showRoleSwitch()) {
+      <section class="panel role-switch" aria-label="Search role selector">
+        <button
+          type="button"
+          class="role-button"
+          [class.active]="activeRole() === 'artist'"
+          [attr.aria-pressed]="activeRole() === 'artist'"
+          (click)="setRole('artist')"
+        >
+          Search Artists
+        </button>
+        <button
+          type="button"
+          class="role-button"
+          [class.active]="activeRole() === 'club'"
+          [attr.aria-pressed]="activeRole() === 'club'"
+          (click)="setRole('club')"
+        >
+          Search Clubs/Bookers
+        </button>
+      </section>
+    }
+
+    <section class="panel">
+      <h2>Filters</h2>
+      @if (activeRole() === 'artist') {
+        <form class="filter-grid" novalidate>
+          <label>
+            Genre
+            <input type="text" placeholder="Rock, Punk, Indie" />
+          </label>
+          <label>
+            City
+            <input type="text" placeholder="Los Angeles" />
+          </label>
+          <label>
+            Availability (Month)
+            <input type="text" placeholder="April 2026" />
+          </label>
+          <label>
+            Budget Range
+            <input type="text" placeholder="$300 - $1200" />
+          </label>
+        </form>
+      } @else {
+        <form class="filter-grid" novalidate>
+          <label>
+            Venue Type
+            <input type="text" placeholder="Club, Bar, Theater" />
+          </label>
+          <label>
+            City
+            <input type="text" placeholder="Los Angeles" />
+          </label>
+          <label>
+            Capacity
+            <input type="text" placeholder="100 - 500" />
+          </label>
+          <label>
+            Preferred Genre
+            <input type="text" placeholder="Alternative Rock" />
+          </label>
+        </form>
+      }
+    </section>
+
+    <section class="panel">
+      <h2>Mock Results ({{ resultCount() }})</h2>
+      @if (dataLoadFailed()) {
+        <p>Unable to load mock data right now.</p>
+      } @else if (resultCount() === 0) {
+        <p>Loading results...</p>
+      } @else if (activeRole() === 'artist') {
+        <ul>
+          @for (artist of artists(); track artist.name) {
+            <li>
+              <strong>{{ artist.name }}</strong> - {{ artist.genre }} - {{ artist.city }} - {{ artist.summary }}
+            </li>
+          }
+        </ul>
+      } @else {
+        <ul>
+          @for (club of clubs(); track club.name) {
+            <li>
+              <strong>{{ club.name }}</strong> - {{ club.city }} - Capacity {{ club.capacity }} - {{ club.summary }}
+            </li>
+          }
+        </ul>
+      }
+    </section>
+  </section>
+</main>

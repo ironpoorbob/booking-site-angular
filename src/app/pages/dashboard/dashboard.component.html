@@ -1,0 +1,55 @@
+<main class="dashboard-page">
+  <section class="dashboard-wrap">
+    <header class="dashboard-header">
+      <p class="kicker">Dashboard</p>
+      <h1>Your Booking Hub</h1>
+      <a class="home-link" routerLink="/">Back to Home</a>
+    </header>
+
+    <section class="panel profile-panel">
+      <div class="panel-head">
+        <h2>Profile Info</h2>
+        <div class="panel-actions">
+          <a class="search-link" routerLink="/search">Search</a>
+          <a class="edit-profile-link" routerLink="/profile-edit">Edit/Update Profile</a>
+        </div>
+      </div>
+      <dl class="profile-grid">
+        <div>
+          <dt>Account Type</dt>
+          <dd>{{ accountTypeLabel }}</dd>
+        </div>
+        <div>
+          <dt>Display Name</dt>
+          <dd>Stone Echo</dd>
+        </div>
+        <div>
+          <dt>Email</dt>
+          <dd>bookings@stoneecho.com</dd>
+        </div>
+        <div>
+          <dt>City</dt>
+          <dd>Los Angeles, CA</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="panel">
+      <h2>Recent Interactions</h2>
+      <ul>
+        <li>Message from The Velvet Room about an April opener slot.</li>
+        <li>Follow-up request from Riot Alley for stage plot and rider.</li>
+        <li>New inquiry from Neon Club for a Friday residency.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Upcoming Bookings</h2>
+      <ul>
+        <li>March 22, 2026: The Velvet Room, Hollywood - 9:30 PM</li>
+        <li>April 5, 2026: Riot Alley, Downtown LA - 8:00 PM</li>
+        <li>April 18, 2026: Neon Club, Long Beach - 10:00 PM</li>
+      </ul>
+    </section>
+  </section>
+</main>

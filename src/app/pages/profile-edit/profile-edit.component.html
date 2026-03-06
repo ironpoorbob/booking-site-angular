@@ -1,0 +1,177 @@
+<main class="profile-edit-page">
+  <section class="profile-edit-card">
+    <header>
+      <p class="kicker">Profile</p>
+      <h1>Edit/Update Profile</h1>
+      <p class="subtitle">Pick your account type, then fill out details for your booking profile.</p>
+    </header>
+
+    @if (showRoleSwitch()) {
+      <section class="role-switch" aria-label="Account type selector">
+        <button
+          type="button"
+          class="role-button"
+          [class.active]="role() === 'artist'"
+          [attr.aria-pressed]="role() === 'artist'"
+          (click)="setRole('artist')"
+        >
+          Artist
+        </button>
+        <button
+          type="button"
+          class="role-button"
+          [class.active]="role() === 'club'"
+          [attr.aria-pressed]="role() === 'club'"
+          (click)="setRole('club')"
+        >
+          Club/Booker
+        </button>
+      </section>
+    }
+
+    <form class="profile-form" novalidate>
+      @if (role() === 'artist') {
+        <section>
+          <h2>Artist/Band Details</h2>
+          <label>
+            Artist or Band Name
+            <input type="text" name="artistName" placeholder="Stone Echo" />
+          </label>
+          <label>
+            Artist Type
+            <select name="artistType" [value]="artistType()" (change)="setArtistType($event)">
+              <option value="musician-band">Musician/Band</option>
+              <option value="dj">DJ</option>
+              <option value="comedian">Comedian</option>
+              <option value="magician">Magician</option>
+              <option value="trivia-host">Trivia Host</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+          @if (showMusicGenre()) {
+            <label>
+              Genre
+              <select name="genre">
+                <option value="">Select Genre</option>
+                <option>Rock</option>
+                <option>Pop</option>
+                <option>Hip-Hop/Rap</option>
+                <option>R&B/Soul</option>
+                <option>Country</option>
+                <option>Jazz</option>
+                <option>Blues</option>
+                <option>Folk</option>
+                <option>Alternative/Indie</option>
+                <option>Metal</option>
+                <option>Punk</option>
+                <option>Electronic/EDM</option>
+                <option>Reggae</option>
+                <option>Latin</option>
+                <option>Classical</option>
+                <option>World</option>
+              </select>
+            </label>
+          }
+          <label>
+            Home City
+            <input type="text" name="artistCity" placeholder="Los Angeles, CA" />
+          </label>
+          <label>
+            Typical Set Length
+            <input type="text" name="setLength" placeholder="45 minutes" />
+          </label>
+          <label>
+            Artist Description
+            <textarea
+              name="artistDescription"
+              rows="4"
+              placeholder="Describe your act, performance style, and what venues you are best suited for."
+            ></textarea>
+          </label>
+          <label>
+            Upload Audio/Video
+            <input type="file" name="mediaUpload" accept="audio/*,video/*" multiple />
+            <span class="field-help">Upload demos, live clips, or promo reels.</span>
+          </label>
+          <div class="media-links">
+            <h3>YouTube Links</h3>
+            <label>
+              YouTube Link 1
+              <input type="url" name="youtubeLink1" placeholder="https://www.youtube.com/watch?v=..." />
+            </label>
+            <label>
+              YouTube Link 2
+              <input type="url" name="youtubeLink2" placeholder="https://www.youtube.com/watch?v=..." />
+            </label>
+            <label>
+              YouTube Link 3
+              <input type="url" name="youtubeLink3" placeholder="https://www.youtube.com/watch?v=..." />
+            </label>
+          </div>
+        </section>
+      } @else {
+        <section>
+          <h2>Club/Booker Details</h2>
+          <label>
+            Venue or Booker Name
+            <input type="text" name="clubName" placeholder="The Velvet Room" />
+          </label>
+          <label>
+            Club/Booker Type
+            <select name="clubType">
+              <option value="">Select Type</option>
+              <option>Venue/Club</option>
+              <option>Promoter</option>
+              <option>Talent Buyer</option>
+              <option>Private Event Booker</option>
+            </select>
+          </label>
+          <label>
+            Venue Capacity
+            <input type="number" name="capacity" placeholder="350" />
+          </label>
+          <label>
+            City
+            <input type="text" name="clubCity" placeholder="Los Angeles, CA" />
+          </label>
+          <label>
+            Booking Contact Email
+            <input type="email" name="bookingEmail" placeholder="bookings@velvetroom.com" />
+          </label>
+          <label>
+            Typical Booking Nights
+            <input type="text" name="bookingNights" placeholder="Thursday, Friday, Saturday" />
+          </label>
+          <fieldset class="checkbox-group">
+            <legend>Preferred Genres</legend>
+            <label><input type="checkbox" name="preferredGenres" value="rock" /> Rock</label>
+            <label><input type="checkbox" name="preferredGenres" value="alternative-indie" /> Alternative/Indie</label>
+            <label><input type="checkbox" name="preferredGenres" value="metal" /> Metal</label>
+            <label><input type="checkbox" name="preferredGenres" value="punk" /> Punk</label>
+            <label><input type="checkbox" name="preferredGenres" value="pop" /> Pop</label>
+            <label><input type="checkbox" name="preferredGenres" value="hip-hop-rap" /> Hip-Hop/Rap</label>
+            <label><input type="checkbox" name="preferredGenres" value="rnb-soul" /> R&B/Soul</label>
+            <label><input type="checkbox" name="preferredGenres" value="country" /> Country</label>
+            <label><input type="checkbox" name="preferredGenres" value="jazz" /> Jazz</label>
+            <label><input type="checkbox" name="preferredGenres" value="blues" /> Blues</label>
+            <label><input type="checkbox" name="preferredGenres" value="electronic-edm" /> Electronic/EDM</label>
+            <label><input type="checkbox" name="preferredGenres" value="latin" /> Latin</label>
+          </fieldset>
+          <label>
+            Notes for Artists
+            <textarea
+              name="bookingNotes"
+              rows="3"
+              placeholder="Share expectations, set length preferences, and production details."
+            ></textarea>
+          </label>
+        </section>
+      }
+
+      <div class="actions">
+        <a class="save-link" routerLink="/dashboard">Save Profile</a>
+        <a class="cancel-link" routerLink="/dashboard">Cancel</a>
+      </div>
+    </form>
+  </section>
+</main>

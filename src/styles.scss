@@ -1,0 +1,23 @@
+:root {
+  --font-display: 'Bebas Neue', 'Arial Narrow', 'Arial', sans-serif;
+  --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-ui: 'Avenir Next', 'Segoe UI', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+  font-family: var(--font-body);
+}

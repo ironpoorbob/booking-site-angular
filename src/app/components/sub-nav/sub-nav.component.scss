@@ -1,0 +1,76 @@
+:host {
+  display: block;
+}
+
+.sub-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid #2f2f2f;
+  background: rgba(12, 12, 12, 0.94);
+  backdrop-filter: blur(8px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand img {
+  display: block;
+  width: 120px;
+  max-width: 36vw;
+  height: auto;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.links a,
+.links button {
+  border-radius: 999px;
+  border: 1px solid #3b3b3b;
+  background: #1a1a1a;
+  color: #f1f1f1;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.72rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  padding: 0.4rem 0.72rem;
+  cursor: pointer;
+}
+
+.links a.active {
+  color: #111;
+  border-color: transparent;
+  background: linear-gradient(90deg, #ff3d00 0%, #ff8a00 100%);
+}
+
+.links .logout-link {
+  color: #ffb26a;
+}
+
+@media (max-width: 780px) {
+  .sub-nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .links {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
